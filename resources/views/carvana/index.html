@@ -1,0 +1,1322 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Dashwheelz </title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+                <img src="./assets/images/logo.png" alt="Logo" class="img-fluid logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3 text-menu">
+                    <li class="nav-item">
+                        <a class="nav-link active rounded-pill px-3" href="./index.html">Home</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link rounded-pill px-3" href="#">Rent a Car</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill px-3" href="#">Book a Driver</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill px-3" href="#!">How it Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill px-3" href="./about-us.html">About US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill px-3" href="#">Services</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link rounded-pill px-3" href="#">Our Fleet</a>
+                    </li> -->
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ms-lg-3 icon-menu">
+                    <!-- <li class="nav-item me-2">
+                        <a class="nav-link rounded-pill wishlist d-flex justify-content-center align-items-center"  data-bs-toggle="offcanvas" href="#navbarWishlist" role="button" aria-controls="navbarWishlist">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-headset-icon lucide-headset"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></svg>
+                        </a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link rounded-pill wishlist d-flex justify-content-center align-items-center"  data-bs-toggle="offcanvas" href="#navbarWishlist" role="button" aria-controls="navbarWishlist">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        </a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill px-3 right-btns border d-flex align-items-center" data-bs-toggle="offcanvas" href="#navbarOffcanvas" role="button" aria-controls="navbarOffcanvas">
+                            <div class="user-icon rounded-circle me-2 d-flex justify-content-center align-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-icon lucide-user-round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 12h16"/><path d="M4 18h16"/><path d="M4 6h16"/></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero d-flex align-items-center justify-content-center">
+        <div class="container">
+            <div class="col-12 col-md-8 mx-auto">
+                <h1 class="text-uppercase text-light text-center mb-3"> Welcome Back </h1>
+                <div class="search-box">
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" class="form-control" id="searchInput"
+                            placeholder="Search Make, Model, or Keyword">
+                        <button class="go-button">Go</button>
+                    </div>
+                    <div class="suggestion-box" id="suggestionBox">
+                        <div class="mb-4">
+                            <h5 class="mb-2 fs-6 fw-semibold">Vehicle Styles</h5>
+                            <div class="row g-3">
+                                <div class="col-6 col-md-3">
+                                    <a href="#"
+                                        class="d-inline-block overflow-hidden rounded vehicle-item text-decoration-none card h-100 w-100">
+                                        <img class="img-fluid rounded" src="./assets/images/vehicle-styles/suv.webp" alt="suv">
+                                        <p class="m-0"> SUVs </p>
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <a href="#"
+                                        class="d-inline-block overflow-hidden rounded vehicle-item text-decoration-none card h-100 w-100">
+                                        <img class="img-fluid rounded" src="./assets/images/vehicle-styles/sedan.webp"
+                                            alt="sedan">
+                                        <p class="m-0"> Sedans </p>
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <a href="#"
+                                        class="d-inline-block overflow-hidden rounded vehicle-item text-decoration-none card h-100 w-100">
+                                        <img class="img-fluid rounded" src="./assets/images/vehicle-styles/truck.webp"
+                                            alt="truck">
+                                        <p class="m-0"> Trucks </p>
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <a href="#"
+                                        class="d-inline-block overflow-hidden rounded vehicle-item text-decoration-none card h-100 w-100">
+                                        <img class="img-fluid rounded" src="./assets/images/vehicle-styles/coupe.webp"
+                                            alt="coupe">
+                                        <p class="m-0"> Coupes </p>
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <a href="#"
+                                        class="d-inline-block overflow-hidden rounded vehicle-item text-decoration-none card h-100 w-100">
+                                        <img class="img-fluid rounded" src="./assets/images/vehicle-styles/minivan.webp"
+                                            alt="minivan">
+                                        <p class="m-0"> Minivans </p>
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <a href="#"
+                                        class="d-inline-block overflow-hidden rounded vehicle-item text-decoration-none card h-100 w-100">
+                                        <img class="img-fluid rounded" src="./assets/images/vehicle-styles/convertible.webp"
+                                            alt="convertible">
+                                        <p class="m-0"> Convertibles </p>
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <a href="#"
+                                        class="d-inline-block overflow-hidden rounded vehicle-item text-decoration-none card h-100 w-100">
+                                        <img class="img-fluid rounded" src="./assets/images/vehicle-styles/wagon.webp"
+                                            alt="wagon">
+                                        <p class="m-0"> Wagons </p>
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <a href="#"
+                                        class="d-inline-block overflow-hidden rounded vehicle-item text-decoration-none card h-100 w-100">
+                                        <img class="img-fluid rounded" src="./assets/images/vehicle-styles/hatchback.webp"
+                                            alt="hatchback">
+                                        <p class="m-0"> Hatchbacks </p>
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <a href="#"
+                                        class="d-inline-block overflow-hidden rounded vehicle-item text-decoration-none card h-100 w-100">
+                                        <img class="img-fluid rounded" src="./assets/images/vehicle-styles/electric.webp"
+                                            alt="electric">
+                                        <p class="m-0"> EVs </p>
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <a href="#"
+                                        class="d-inline-block overflow-hidden rounded vehicle-item text-decoration-none card h-100 w-100">
+                                        <img class="img-fluid rounded" src="./assets/images/vehicle-styles/hybrid.webp"
+                                            alt="hybrid">
+                                        <p class="m-0"> Hybrids </p>
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <a href="#"
+                                        class="d-inline-block overflow-hidden rounded vehicle-item text-decoration-none card h-100 w-100">
+                                        <img class="img-fluid rounded" src="./assets/images/vehicle-styles/plug-in-hybrid.webp"
+                                            alt="plug-in-hybrid">
+                                        <p class="m-0"> Plug in hybrid </p>
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <a href="#"
+                                        class="d-inline-block overflow-hidden rounded vehicle-item text-decoration-none card h-100 w-100">
+                                        <div class="h-100 w-100 d-flex justify-content-center align-items-center">
+                                            <div>
+                                                <svg fill=none height=33 viewBox="0 0 33 33" width=33
+                                                xmlns=http://www.w3.org/2000/svg>
+                                                    <path
+                                                        d="M18.0789 2.60039L18.3895 2.76191L18.733 2.69443L20.5901 2.32969L21.9551 3.64051L22.2076 3.88299L22.5562 3.91504L24.4408 4.08825L25.3812 5.73055L25.5552 6.03435L25.8806 6.1633L27.6401 6.86044L28.0797 8.70117L28.161 9.04167L28.437 9.2571L29.9287 10.4217L29.832 12.3117L29.8141 12.6613L30.0182 12.9458L31.1214 14.4835L30.4961 16.2697L30.3804 16.6001L30.4961 16.9305L31.1214 18.7167L30.0182 20.2544L29.8141 20.5389L29.832 20.8885L29.9287 22.7785L28.437 23.9431L28.161 24.1585L28.0797 24.499L27.6401 26.3398L25.8806 27.0369L25.5552 27.1658L25.3812 27.4696L24.4408 29.1119L22.5562 29.2852L22.2076 29.3172L21.9551 29.5597L20.5901 30.8705L18.733 30.5058L18.3895 30.4383L18.0789 30.5998L16.3999 31.473L14.7209 30.5998L14.4103 30.4383L14.0668 30.5058L12.2097 30.8705L10.8447 29.5597L10.5922 29.3172L10.2436 29.2852L8.35902 29.1119L7.41859 27.4696L7.24463 27.1658L6.91916 27.0369L5.15974 26.3398L4.72009 24.499L4.63876 24.1585L4.36282 23.9431L2.87107 22.7785L2.96782 20.8885L2.98572 20.5389L2.78164 20.2544L1.67842 18.7167L2.30374 16.9305L2.41941 16.6001L2.30374 16.2697L1.67842 14.4835L2.78164 12.9458L2.98572 12.6613L2.96782 12.3117L2.87107 10.4217L4.36282 9.2571L4.63876 9.04167L4.72009 8.70117L5.15974 6.86044L6.91916 6.1633L7.24463 6.03435L7.41859 5.73055L8.35902 4.08825L10.2436 3.91504L10.5922 3.88299L10.8447 3.64051L12.2097 2.32969L14.0668 2.69443L14.4103 2.76191L14.7209 2.60039L16.3999 1.72723L18.0789 2.60039Z"
+                                                        stroke=#00619E stroke-width=2 />
+                                                    <g clip-path=url(#clip0_17975_9013)>
+                                                        <path
+                                                            d="M11.7787 16.6001H21.0212C22.3862 16.6001 23.3999 17.6386 23.3999 18.7801V21.6001V22.6001H22.2749H10.5249H9.3999V21.6001V18.7801C9.3999 17.6386 10.4136 16.6001 11.7787 16.6001Z"
+                                                            stroke=#00619E stroke-width=2 />
+                                                        <path
+                                                            d="M14.2566 12.6001H18.5432C20.1912 12.6001 21.3999 13.8262 21.3999 15.1601V15.6001V16.6001H20.2332H12.5666H11.3999V15.6001V15.1601C11.3999 13.8262 12.6086 12.6001 14.2566 12.6001Z"
+                                                            stroke=#00619E stroke-width=2 />
+                                                        <path
+                                                            d="M24.3999 15.3929C24.3999 15.7072 24.2142 15.9919 23.9266 16.1185L23.0599 16.5001C22.2999 16.8301 21.3999 16.3401 21.3999 15.6001C21.3999 15.0501 21.9099 14.6001 22.5499 14.6001H23.6071C24.0449 14.6001 24.3999 14.9551 24.3999 15.3929Z"
+                                                            fill=#00619E />
+                                                        <path
+                                                            d="M8.3999 15.3929C8.3999 15.7072 8.58558 15.9919 8.87324 16.1185L9.7399 16.5001C10.4999 16.8301 11.3999 16.3401 11.3999 15.6001C11.3999 15.0501 10.8899 14.6001 10.2499 14.6001H9.19272C8.75486 14.6001 8.3999 14.9551 8.3999 15.3929Z"
+                                                            fill=#00619E />
+                                                        <path
+                                                            d="M21.3999 24.6001C20.8499 24.6001 20.3999 24.1501 20.3999 23.6001C20.3999 23.0501 20.8499 22.6001 21.3999 22.6001H22.3999C22.9499 22.6001 23.3999 23.0501 23.3999 23.6001C23.3999 24.1501 22.9499 24.6001 22.3999 24.6001H21.3999Z"
+                                                            fill=#00619E />
+                                                        <path
+                                                            d="M22.7999 23.6001H21.9999H22.7999ZM22.7999 21.6001H21.9999C21.1199 21.6001 20.3999 22.5001 20.3999 23.6001C20.3999 24.7001 21.1199 25.6001 21.9999 25.6001H22.7999C23.6799 25.6001 24.3999 24.7001 24.3999 23.6001C24.3999 22.5001 23.6799 21.6001 22.7999 21.6001Z"
+                                                            fill=#00619E />
+                                                        <path
+                                                            d="M10.7999 23.6001H9.9999H10.7999ZM10.7999 21.6001H9.9999C9.1199 21.6001 8.3999 22.5001 8.3999 23.6001C8.3999 24.7001 9.1199 25.6001 9.9999 25.6001H10.7999C11.6799 25.6001 12.3999 24.7001 12.3999 23.6001C12.3999 22.5001 11.6799 21.6001 10.7999 21.6001Z"
+                                                            fill=#00619E />
+                                                        <circle cx=19.3999 cy=19.6001 fill=#00619E r=1 />
+                                                        <circle cx=13.3999 cy=19.6001 fill=#00619E r=1 />
+                                                    </g>
+                                                    <mask fill=white id=path-11-inside-1_17975_9013>
+                                                        <ellipse cx=16.3999 cy=8.1001 rx=5 ry=1.5 />
+                                                    </mask>
+                                                    <path
+                                                        d="M19.3999 8.1001C19.3999 7.72926 19.5306 7.4447 19.6461 7.27541C19.7517 7.1206 19.8474 7.05442 19.8499 7.05264C19.858 7.04691 19.8261 7.0701 19.7343 7.11088C19.6456 7.15024 19.5223 7.19664 19.3607 7.24511C18.6894 7.44651 17.6421 7.6001 16.3999 7.6001V11.6001C17.9192 11.6001 19.3718 11.4179 20.5101 11.0764C21.0665 10.9095 21.6625 10.671 22.164 10.3153C22.6136 9.99642 23.3999 9.27683 23.3999 8.1001H19.3999ZM16.3999 7.6001C15.1578 7.6001 14.1104 7.44651 13.4391 7.24511C13.2775 7.19664 13.1542 7.15024 13.0655 7.11088C12.9737 7.0701 12.9418 7.04691 12.9499 7.05264C12.9524 7.05442 13.0481 7.1206 13.1537 7.27541C13.2692 7.4447 13.3999 7.72926 13.3999 8.1001H9.3999C9.3999 9.27683 10.1862 9.99642 10.6358 10.3153C11.1373 10.671 11.7333 10.9095 12.2897 11.0764C13.428 11.4179 14.8806 11.6001 16.3999 11.6001V7.6001ZM13.3999 8.1001C13.3999 8.47093 13.2692 8.75549 13.1537 8.92479C13.0481 9.07959 12.9524 9.14578 12.9499 9.14755C12.9418 9.15328 12.9737 9.1301 13.0655 9.08932C13.1542 9.04995 13.2775 9.00356 13.4391 8.95509C14.1104 8.75368 15.1578 8.6001 16.3999 8.6001V4.6001C14.8806 4.6001 13.428 4.7823 12.2897 5.12378C11.7333 5.29071 11.1373 5.52919 10.6358 5.88491C10.1862 6.20378 9.3999 6.92337 9.3999 8.1001H13.3999ZM16.3999 8.6001C17.6421 8.6001 18.6894 8.75368 19.3607 8.95509C19.5223 9.00356 19.6456 9.04995 19.7343 9.08932C19.8261 9.1301 19.858 9.15328 19.8499 9.14755C19.8474 9.14578 19.7517 9.07959 19.6461 8.92479C19.5306 8.75549 19.3999 8.47093 19.3999 8.1001H23.3999C23.3999 6.92337 22.6136 6.20378 22.164 5.88491C21.6625 5.52919 21.0665 5.29071 20.5101 5.12378C19.3718 4.7823 17.9192 4.6001 16.3999 4.6001V8.6001Z"
+                                                        fill=#00619E mask=url(#path-11-inside-1_17975_9013) />
+                                                    <defs>
+                                                        <clipPath id=clip0_17975_9013>
+                                                            <rect fill=white height=14 transform="translate(8.3999 11.6001)"
+                                                                width=16 />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                                <br>
+                                                <p class="mb-0 mt-2"> View All </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="recommended mb-4">
+                            <h5 class="mb-2 fs-6 fw-semibold">Recommended</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="#" class="text-decoration-none d-inline-block px-3 py-2 border rounded">
+                                    <i class="fa-solid fa-tag"></i> Shop Great Deals
+                                </a>
+                                <a href="#" class="text-decoration-none d-inline-block px-3 py-2 border rounded">
+                                    <i class="fa-solid fa-circle-right" style="transform: rotate(45deg)"></i> Price Drops
+                                </a>
+                                <a href="#" class="text-decoration-none d-inline-block px-3 py-2 border rounded">
+                                    <i class="fa-solid fa-truck-fast"></i> Free Shipping
+                                </a>
+                                <a href="#" class="text-decoration-none d-inline-block px-3 py-2 border rounded">
+                                    <i class="fa-solid fa-plug"></i> Clean Vehicle Tax Credit
+                                </a>
+                                <a href="#" class="text-decoration-none d-inline-block px-3 py-2 border rounded">
+                                    Cars Under $20,000
+                                </a>
+                                <a href="#" class="text-decoration-none d-inline-block px-3 py-2 border rounded">
+                                    Delivery by Wednesday
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="trending-models mb-4">
+                            <h5 class="mb-2 fs-6 fw-semibold">Trending models</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="#" class="text-decoration-none d-inline-block px-3 py-2 border rounded">
+                                    Rivian R1S/R1T
+                                </a>
+                                <a href="#" class="text-decoration-none d-inline-block px-3 py-2 border rounded">
+                                    Tesla Model 3
+                                </a>
+                                <a href="#" class="text-decoration-none d-inline-block px-3 py-2 border rounded">
+                                    Chevrolet Equinox
+                                </a>
+                                <a href="#" class="text-decoration-none d-inline-block px-3 py-2 border rounded">
+                                    Nissan Rogue
+                                </a>
+                                <a href="#" class="text-decoration-none d-inline-block px-3 py-2 border rounded">
+                                    Ford Escape
+                                </a>
+                                <a href="#" class="text-decoration-none d-inline-block px-3 py-2 border rounded">
+                                    Ford Explorer
+                                </a>
+                                <a href="#" class="text-decoration-none d-inline-block px-3 py-2 border rounded">
+                                    Toyota Camry
+                                </a>
+                                <a href="#" class="text-decoration-none d-inline-block px-3 py-2 border rounded">
+                                    Honda Civic
+                                </a>
+                                <a href="#" class="text-decoration-none d-inline-block px-3 py-2 border rounded">
+                                    Nissan Altima
+                                </a>
+                                <a href="#" class="text-decoration-none d-inline-block px-3 py-2 border rounded">
+                                    Jeep Grand Cherokee
+                                </a>
+                                <a href="#" class="text-decoration-none d-inline-block px-3 py-2 border rounded">
+                                    Ford F-150 SuperCrew
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Rental Fleet -->
+    <section class="bg-white service-item-list">
+        <div class="container py-4 py-md-5">
+            <h2 class="mb-3 fs-28 fw-semibold text-center text-md-start"> Our Rental Fleet </h2>
+            
+            <div class="row g-0 g-md-4">
+                <!-- Service Item 01 -->
+                <div class="col-12">
+                    <div class="service-card">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="service-img-container" style="background-image: url('./assets/images/services.jpg')">
+                                    <a href="./vehicle-details.html" class="overlay-link"></a>
+
+                                    <button class="bg-transparent border-0 wishlist-btn position-absolute theme-color"
+                                        data-bs-toggle="tooltip" title="Add to wishlist">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </button>
+
+                                    <div class="sm-content position-absolute d-md-none">
+                                        <h3 class="service-title fw-medium fs-4"> 2024 Toyota Corolla </h3>
+
+                                        <div class="service-content justify-content-center">
+                                            <p class="price mb-0 mb-md-1"> $22,500 </p>
+                                            <p class="down-price text-start text-md-center mb-2"> <span> $2,000 </span> Downpayment <span> $180 </span> Weekly Rent </p>
+                                            
+                                            <ul class="feature-list">
+                                                <li>5 Seats</li>
+                                                <li>CVT Transmission</li>
+                                                <li>Dual Zone AC</li>
+                                                <li>Apple CarPlay</li>
+                                                <li>1,500 Miles Monthly</li>
+                                            </ul>
+
+                                            <div class="row g-2 align-items-end">
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Buy Now </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Rent to Own </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Features List </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-8 d-none d-md-block">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-md-12 col-lg-8">
+                                        <a href="./vehicle-details.html" class="text-decoration-none">
+                                            <div class="service-content">
+                                                <h3 class="service-title fw-medium fs-4"> 2024 Toyota Corolla </h3>
+                                                <ul class="feature-list">
+                                                    <li>5 Seats</li>
+                                                    <li>CVT Transmission</li>
+                                                    <li>Dual Zone AC</li>
+                                                    <li>Apple CarPlay</li>
+                                                    <li>1,500 Miles Monthly</li>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-12 col-lg-4">
+                                        <div class="service-content ps-0 justify-content-center">
+                                            <h4 class="price text-start text-md-center mb-2">$22,500 <sub> Was <del> $24,000 </del> </sub></h4>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6 w-100 mb-4"> Buy Now Price </a>
+                                            <p class="down-price mb-1"> <span> $2,000 </span> Downpayment <span> $180 </span> Weekly Rent </p>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6"> Rent to Own  </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Item 02 -->
+                <div class="col-12">
+                    <div class="service-card">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="service-img-container" style="background-image: url('./assets/images/services-list/2.webp')">
+                                    <a href="./vehicle-details.html" class="overlay-link"></a>
+
+                                    <button class="bg-transparent border-0 wishlist-btn position-absolute theme-color"
+                                        data-bs-toggle="tooltip" title="Add to wishlist">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </button>
+
+                                    <div class="sm-content position-absolute d-md-none">
+                                        <h3 class="service-title fw-medium fs-4"> Honda Civic LX </h3>
+
+                                        <div class="service-content justify-content-center">
+                                            <p class="price mb-0 mb-md-1"> $24,300 </p>
+                                            <p class="down-price text-start text-md-center mb-2"> <span> $2,200 </span> Downpayment <span> $190 </span> Weekly Rent </p>
+                                            
+                                            <ul class="feature-list">
+                                                <li>5 Seats</li>
+                                                <li>Turbo Engine</li>
+                                                <li>Heated Seats</li>
+                                                <li>Android Auto</li>
+                                                <li>2,000 Miles Monthly</li>
+                                            </ul>
+
+                                            <div class="row g-2 align-items-end">
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Buy Now </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Rent to Own </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Features List </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-8 d-none d-md-block">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-md-12 col-lg-8">
+                                        <a href="./vehicle-details.html" class="text-decoration-none">
+                                            <div class="service-content">
+                                                <h3 class="service-title fw-medium fs-4"> Honda Civic LX </h3>
+                                                <ul class="feature-list">
+                                                    <li>5 Seats</li>
+                                                    <li>Turbo Engine</li>
+                                                    <li>Heated Seats</li>
+                                                    <li>Android Auto</li>
+                                                    <li>2,000 Miles Monthly</li>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-12 col-lg-4">
+                                        <div class="service-content ps-0 justify-content-center">
+                                            <h4 class="price text-start text-md-center mb-2">$24,300 <sub> Was <del> $26,000 </del> </sub></h4>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6 w-100 mb-4"> Buy Now Price </a>
+                                            <p class="down-price mb-1"> <span> $2,200 </span> Downpayment <span> $190 </span> Weekly Rent </p>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6"> Rent to Own  </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Item 03 -->
+                <div class="col-12">
+                    <div class="service-card">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="service-img-container" style="background-image: url('./assets/images/services-list/3.webp')">
+                                    <a href="./vehicle-details.html" class="overlay-link"></a>
+
+                                    <button class="bg-transparent border-0 wishlist-btn position-absolute theme-color"
+                                        data-bs-toggle="tooltip" title="Add to wishlist">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </button>
+
+                                    <div class="sm-content position-absolute d-md-none">
+                                        <h3 class="service-title fw-medium fs-4"> 2023 Ford Escape </h3>
+
+                                        <div class="service-content justify-content-center">
+                                            <p class="price mb-0 mb-md-1"> $27,800 </p>
+                                            <p class="down-price text-start text-md-center mb-2"> <span> $2,500 </span> Downpayment <span> $220 </span> Weekly Rent </p>
+                                            
+                                            <ul class="feature-list">
+                                                <li>5 Seats</li>
+                                                <li>4WD Capability</li>
+                                                <li>Panoramic Sunroof</li>
+                                                <li>Navigation System</li>
+                                                <li>2,500 Miles Monthly</li>
+                                            </ul>
+
+                                            <div class="row g-2 align-items-end">
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Buy Now </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Rent to Own </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Features List </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-8 d-none d-md-block">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-md-12 col-lg-8">
+                                        <a href="./vehicle-details.html" class="text-decoration-none">
+                                            <div class="service-content">
+                                                <h3 class="service-title fw-medium fs-4"> 2023 Ford Escape </h3>
+                                                <ul class="feature-list">
+                                                    <li>5 Seats</li>
+                                                    <li>4WD Capability</li>
+                                                    <li>Panoramic Sunroof</li>
+                                                    <li>Navigation System</li>
+                                                    <li>2,500 Miles Monthly</li>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-12 col-lg-4">
+                                        <div class="service-content ps-0 justify-content-center">
+                                            <h4 class="price text-start text-md-center mb-2">$27,800 <sub> Was <del> $29,500 </del> </sub></h4>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6 w-100 mb-4"> Buy Now Price </a>
+                                            <p class="down-price mb-1"> <span> $2,500 </span> Downpayment <span> $220 </span> Weekly Rent </p>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6"> Rent to Own  </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Item 04 -->
+                <div class="col-12">
+                    <div class="service-card">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="service-img-container" style="background-image: url('./assets/images/services-list/4.webp')">
+                                    <a href="./vehicle-details.html" class="overlay-link"></a>
+
+                                    <button class="bg-transparent border-0 wishlist-btn position-absolute theme-color"
+                                        data-bs-toggle="tooltip" title="Add to wishlist">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </button>
+
+                                    <div class="sm-content position-absolute d-md-none">
+                                        <h3 class="service-title fw-medium fs-4"> Chevrolet Malibu </h3>
+
+                                        <div class="service-content justify-content-center">
+                                            <p class="price mb-0 mb-md-1"> $23,900 </p>
+                                            <p class="down-price text-start text-md-center mb-2"> <span> $2,100 </span> Downpayment <span> $175 </span> Weekly Rent </p>
+                                            
+                                            <ul class="feature-list">
+                                                <li>5 Seats</li>
+                                                <li>Premium Audio</li>
+                                                <li>Remote Start</li>
+                                                <li>Lane Keep Assist</li>
+                                                <li>1,800 Miles Monthly</li>
+                                            </ul>
+
+                                            <div class="row g-2 align-items-end">
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Buy Now </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Rent to Own </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Features List </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-8 d-none d-md-block">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-md-12 col-lg-8">
+                                        <a href="./vehicle-details.html" class="text-decoration-none">
+                                            <div class="service-content">
+                                                <h3 class="service-title fw-medium fs-4"> Chevrolet Malibu </h3>
+                                                <ul class="feature-list">
+                                                    <li>5 Seats</li>
+                                                    <li>Premium Audio</li>
+                                                    <li>Remote Start</li>
+                                                    <li>Lane Keep Assist</li>
+                                                    <li>1,800 Miles Monthly</li>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-12 col-lg-4">
+                                        <div class="service-content ps-0 justify-content-center">
+                                            <h4 class="price text-start text-md-center mb-2">$23,900 <sub> Was <del> $25,200 </del> </sub></h4>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6 w-100 mb-4"> Buy Now Price </a>
+                                            <p class="down-price mb-1"> <span> $2,100 </span> Downpayment <span> $175 </span> Weekly Rent </p>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6"> Rent to Own  </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Item 05 -->
+                <div class="col-12">
+                    <div class="service-card">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="service-img-container" style="background-image: url('./assets/images/services-list/5.webp')">
+                                    <a href="./vehicle-details.html" class="overlay-link"></a>
+
+                                    <button class="bg-transparent border-0 wishlist-btn position-absolute theme-color"
+                                        data-bs-toggle="tooltip" title="Add to wishlist">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </button>
+
+                                    <div class="sm-content position-absolute d-md-none">
+                                        <h3 class="service-title fw-medium fs-4"> 2024 Hyundai Tucson </h3>
+
+                                        <div class="service-content justify-content-center">
+                                            <p class="price mb-0 mb-md-1"> $28,500 </p>
+                                            <p class="down-price text-start text-md-center mb-2"> <span> $2,800 </span> Downpayment <span> $240 </span> Weekly Rent </p>
+                                            
+                                            <ul class="feature-list">
+                                                <li>5 Seats</li>
+                                                <li>Hybrid Option</li>
+                                                <li>Wireless Charging</li>
+                                                <li>Blind Spot Monitor</li>
+                                                <li>3,000 Miles Monthly</li>
+                                            </ul>
+
+                                            <div class="row g-2 align-items-end">
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Buy Now </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Rent to Own </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Features List </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-8 d-none d-md-block">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-md-12 col-lg-8">
+                                        <a href="./vehicle-details.html" class="text-decoration-none">
+                                            <div class="service-content">
+                                                <h3 class="service-title fw-medium fs-4"> 2024 Hyundai Tucson </h3>
+                                                <ul class="feature-list">
+                                                    <li>5 Seats</li>
+                                                    <li>Hybrid Option</li>
+                                                    <li>Wireless Charging</li>
+                                                    <li>Blind Spot Monitor</li>
+                                                    <li>3,000 Miles Monthly</li>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-12 col-lg-4">
+                                        <div class="service-content ps-0 justify-content-center">
+                                            <h4 class="price text-start text-md-center mb-2">$28,500 <sub> Was <del> $30,000 </del> </sub></h4>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6 w-100 mb-4"> Buy Now Price </a>
+                                            <p class="down-price mb-1"> <span> $2,800 </span> Downpayment <span> $240 </span> Weekly Rent </p>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6"> Rent to Own  </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Item 06 -->
+                <div class="col-12">
+                    <div class="service-card">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="service-img-container" style="background-image: url('./assets/images/services-list/6.webp')">
+                                    <a href="./vehicle-details.html" class="overlay-link"></a>
+
+                                    <button class="bg-transparent border-0 wishlist-btn position-absolute theme-color"
+                                        data-bs-toggle="tooltip" title="Add to wishlist">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </button>
+
+                                    <div class="sm-content position-absolute d-md-none">
+                                        <h3 class="service-title fw-medium fs-4"> Kia Sorento LX </h3>
+
+                                        <div class="service-content justify-content-center">
+                                            <p class="price mb-0 mb-md-1"> $29,200 </p>
+                                            <p class="down-price text-start text-md-center mb-2"> <span> $2,900 </span> Downpayment <span> $250 </span> Weekly Rent </p>
+                                            
+                                            <ul class="feature-list">
+                                                <li>7 Seats</li>
+                                                <li>Third Row Seating</li>
+                                                <li>Rear Entertainment</li>
+                                                <li>360 Camera</li>
+                                                <li>3,500 Miles Monthly</li>
+                                            </ul>
+
+                                            <div class="row g-2 align-items-end">
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Buy Now </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Rent to Own </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Features List </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-8 d-none d-md-block">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-md-12 col-lg-8">
+                                        <a href="./vehicle-details.html" class="text-decoration-none">
+                                            <div class="service-content">
+                                                <h3 class="service-title fw-medium fs-4"> Kia Sorento LX </h3>
+                                                <ul class="feature-list">
+                                                    <li>7 Seats</li>
+                                                    <li>Third Row Seating</li>
+                                                    <li>Rear Entertainment</li>
+                                                    <li>360 Camera</li>
+                                                    <li>3,500 Miles Monthly</li>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-12 col-lg-4">
+                                        <div class="service-content ps-0 justify-content-center">
+                                            <h4 class="price text-start text-md-center mb-2">$29,200 <sub> Was <del> $31,000 </del> </sub></h4>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6 w-100 mb-4"> Buy Now Price </a>
+                                            <p class="down-price mb-1"> <span> $2,900 </span> Downpayment <span> $250 </span> Weekly Rent </p>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6"> Rent to Own  </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Item 07 -->
+                <div class="col-12">
+                    <div class="service-card">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="service-img-container" style="background-image: url('./assets/images/services-list/7.webp')">
+                                    <a href="./vehicle-details.html" class="overlay-link"></a>
+
+                                    <button class="bg-transparent border-0 wishlist-btn position-absolute theme-color"
+                                        data-bs-toggle="tooltip" title="Add to wishlist">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </button>
+
+                                    <div class="sm-content position-absolute d-md-none">
+                                        <h3 class="service-title fw-medium fs-4"> 2023 Subaru Outback </h3>
+
+                                        <div class="service-content justify-content-center">
+                                            <p class="price mb-0 mb-md-1"> $31,000 </p>
+                                            <p class="down-price text-start text-md-center mb-2"> <span> $3,000 </span> Downpayment <span> $270 </span> Weekly Rent </p>
+                                            
+                                            <ul class="feature-list">
+                                                <li>5 Seats</li>
+                                                <li>Standard AWD</li>
+                                                <li>Off-road Capable</li>
+                                                <li>EyeSight Safety</li>
+                                                <li>4,000 Miles Monthly</li>
+                                            </ul>
+
+                                            <div class="row g-2 align-items-end">
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Buy Now </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Rent to Own </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Features List </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-8 d-none d-md-block">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-md-12 col-lg-8">
+                                        <a href="./vehicle-details.html" class="text-decoration-none">
+                                            <div class="service-content">
+                                                <h3 class="service-title fw-medium fs-4"> 2023 Subaru Outback </h3>
+                                                <ul class="feature-list">
+                                                    <li>5 Seats</li>
+                                                    <li>Standard AWD</li>
+                                                    <li>Off-road Capable</li>
+                                                    <li>EyeSight Safety</li>
+                                                    <li>4,000 Miles Monthly</li>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-12 col-lg-4">
+                                        <div class="service-content ps-0 justify-content-center">
+                                            <h4 class="price text-start text-md-center mb-2">$31,000 <sub> Was <del> $33,500 </del> </sub></h4>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6 w-100 mb-4"> Buy Now Price </a>
+                                            <p class="down-price mb-1"> <span> $3,000 </span> Downpayment <span> $270 </span> Weekly Rent </p>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6"> Rent to Own  </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Item 08 -->
+                <div class="col-12">
+                    <div class="service-card">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="service-img-container" style="background-image: url('./assets/images/services-list/8.webp')">
+                                    <a href="./vehicle-details.html" class="overlay-link"></a>
+
+                                    <button class="bg-transparent border-0 wishlist-btn position-absolute theme-color"
+                                        data-bs-toggle="tooltip" title="Add to wishlist">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </button>
+
+                                    <div class="sm-content position-absolute d-md-none">
+                                        <h3 class="service-title fw-medium fs-4"> Volkswagen Jetta </h3>
+
+                                        <div class="service-content justify-content-center">
+                                            <p class="price mb-0 mb-md-1"> $22,800 </p>
+                                            <p class="down-price text-start text-md-center mb-2"> <span> $2,000 </span> Downpayment <span> $170 </span> Weekly Rent </p>
+                                            
+                                            <ul class="feature-list">
+                                                <li>5 Seats</li>
+                                                <li>Turbo Diesel</li>
+                                                <li>Leather Interior</li>
+                                                <li>Digital Cockpit</li>
+                                                <li>2,000 Miles Monthly</li>
+                                            </ul>
+
+                                            <div class="row g-2 align-items-end">
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Buy Now </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Rent to Own </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Features List </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-8 d-none d-md-block">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-md-12 col-lg-8">
+                                        <a href="./vehicle-details.html" class="text-decoration-none">
+                                            <div class="service-content">
+                                                <h3 class="service-title fw-medium fs-4"> Volkswagen Jetta </h3>
+                                                <ul class="feature-list">
+                                                    <li>5 Seats</li>
+                                                    <li>Turbo Diesel</li>
+                                                    <li>Leather Interior</li>
+                                                    <li>Digital Cockpit</li>
+                                                    <li>2,000 Miles Monthly</li>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-12 col-lg-4">
+                                        <div class="service-content ps-0 justify-content-center">
+                                            <h4 class="price text-start text-md-center mb-2">$22,800 <sub> Was <del> $24,300 </del> </sub></h4>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6 w-100 mb-4"> Buy Now Price </a>
+                                            <p class="down-price mb-1"> <span> $2,000 </span> Downpayment <span> $170 </span> Weekly Rent </p>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6"> Rent to Own  </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Item 09 -->
+                <div class="col-12">
+                    <div class="service-card">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="service-img-container" style="background-image: url('./assets/images/services-list/9.webp')">
+                                    <a href="./vehicle-details.html" class="overlay-link"></a>
+
+                                    <button class="bg-transparent border-0 wishlist-btn position-absolute theme-color"
+                                        data-bs-toggle="tooltip" title="Add to wishlist">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </button>
+
+                                    <div class="sm-content position-absolute d-md-none">
+                                        <h3 class="service-title fw-medium fs-4"> 2024 Mazda CX-5 </h3>
+
+                                        <div class="service-content justify-content-center">
+                                            <p class="price mb-0 mb-md-1"> $27,500 </p>
+                                            <p class="down-price text-start text-md-center mb-2"> <span> $2,600 </span> Downpayment <span> $230 </span> Weekly Rent </p>
+                                            
+                                            <ul class="feature-list">
+                                                <li>5 Seats</li>
+                                                <li>Skyactiv Technology</li>
+                                                <li>Heads-up Display</li>
+                                                <li>Bose Sound System</li>
+                                                <li>2,800 Miles Monthly</li>
+                                            </ul>
+
+                                            <div class="row g-2 align-items-end">
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Buy Now </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Rent to Own </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Features List </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-8 d-none d-md-block">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-md-12 col-lg-8">
+                                        <a href="./vehicle-details.html" class="text-decoration-none">
+                                            <div class="service-content">
+                                                <h3 class="service-title fw-medium fs-4"> 2024 Mazda CX-5 </h3>
+                                                <ul class="feature-list">
+                                                    <li>5 Seats</li>
+                                                    <li>Skyactiv Technology</li>
+                                                    <li>Heads-up Display</li>
+                                                    <li>Bose Sound System</li>
+                                                    <li>2,800 Miles Monthly</li>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-12 col-lg-4">
+                                        <div class="service-content ps-0 justify-content-center">
+                                            <h4 class="price text-start text-md-center mb-2">$27,500 <sub> Was <del> $29,000 </del> </sub></h4>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6 w-100 mb-4"> Buy Now Price </a>
+                                            <p class="down-price mb-1"> <span> $2,600 </span> Downpayment <span> $230 </span> Weekly Rent </p>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6"> Rent to Own  </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Item 10 -->
+                <div class="col-12">
+                    <div class="service-card">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="service-img-container" style="background-image: url('./assets/images/services-list/10.webp')">
+                                    <a href="./vehicle-details.html" class="overlay-link"></a>
+
+                                    <button class="bg-transparent border-0 wishlist-btn position-absolute theme-color"
+                                        data-bs-toggle="tooltip" title="Add to wishlist">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </button>
+
+                                    <div class="sm-content position-absolute d-md-none">
+                                        <h3 class="service-title fw-medium fs-4"> Nissan Rogue SV </h3>
+
+                                        <div class="service-content justify-content-center">
+                                            <p class="price mb-0 mb-md-1"> $28,300 </p>
+                                            <p class="down-price text-start text-md-center mb-2"> <span> $2,700 </span> Downpayment <span> $235 </span> Weekly Rent </p>
+                                            
+                                            <ul class="feature-list">
+                                                <li>5 Seats</li>
+                                                <li>ProPILOT Assist</li>
+                                                <li>Zero Gravity Seats</li>
+                                                <li>Around View Monitor</li>
+                                                <li>3,200 Miles Monthly</li>
+                                            </ul>
+
+                                            <div class="row g-2 align-items-end">
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Buy Now </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Rent to Own </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Features List </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-8 d-none d-md-block">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-md-12 col-lg-8">
+                                        <a href="./vehicle-details.html" class="text-decoration-none">
+                                            <div class="service-content">
+                                                <h3 class="service-title fw-medium fs-4"> Nissan Rogue SV </h3>
+                                                <ul class="feature-list">
+                                                    <li>5 Seats</li>
+                                                    <li>ProPILOT Assist</li>
+                                                    <li>Zero Gravity Seats</li>
+                                                    <li>Around View Monitor</li>
+                                                    <li>3,200 Miles Monthly</li>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-12 col-lg-4">
+                                        <div class="service-content ps-0 justify-content-center">
+                                            <h4 class="price text-start text-md-center mb-2">$28,300 <sub> Was <del> $30,200 </del> </sub></h4>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6 w-100 mb-4"> Buy Now Price </a>
+                                            <p class="down-price mb-1"> <span> $2,700 </span> Downpayment <span> $235 </span> Weekly Rent </p>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6"> Rent to Own  </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Item 11 -->
+                <div class="col-12">
+                    <div class="service-card">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="service-img-container" style="background-image: url('./assets/images/services-list/11.webp')">
+                                    <a href="./vehicle-details.html" class="overlay-link"></a>
+
+                                    <button class="bg-transparent border-0 wishlist-btn position-absolute theme-color"
+                                        data-bs-toggle="tooltip" title="Add to wishlist">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </button>
+
+                                    <div class="sm-content position-absolute d-md-none">
+                                        <h3 class="service-title fw-medium fs-4"> Kia Sorento LX </h3>
+
+                                        <div class="service-content justify-content-center">
+                                            <p class="price mb-0 mb-md-1"> $29,200 </p>
+                                            <p class="down-price text-start text-md-center mb-2"> <span> $2,900 </span> Downpayment <span> $250 </span> Weekly Rent </p>
+                                            
+                                            <ul class="feature-list">
+                                                <li>7 Seats</li>
+                                                <li>Third Row Seating</li>
+                                                <li>Rear Entertainment</li>
+                                                <li>360 Camera</li>
+                                                <li>3,500 Miles Monthly</li>
+                                            </ul>
+
+                                            <div class="row g-2 align-items-end">
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Buy Now </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Rent to Own </a>
+                                                </div>
+                                                <div class="col-4">
+                                                    <a href="#!" class="btn theme-btn text-light py-1 px-2 w-100"> Features List </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-8 d-none d-md-block">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-md-12 col-lg-8">
+                                        <a href="./vehicle-details.html" class="text-decoration-none">
+                                            <div class="service-content">
+                                                <h3 class="service-title fw-medium fs-4"> Kia Sorento LX </h3>
+                                                <ul class="feature-list">
+                                                    <li>7 Seats</li>
+                                                    <li>Third Row Seating</li>
+                                                    <li>Rear Entertainment</li>
+                                                    <li>360 Camera</li>
+                                                    <li>3,500 Miles Monthly</li>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-12 col-lg-4">
+                                        <div class="service-content ps-0 justify-content-center">
+                                            <h4 class="price text-start text-md-center mb-2">$29,200 <sub> Was <del> $31,000 </del> </sub></h4>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6 w-100 mb-4"> Buy Now Price </a>
+                                            <p class="down-price mb-1"> <span> $2,900 </span> Downpayment <span> $250 </span> Weekly Rent </p>
+                                            <a href="#!" class="btn theme-btn text-light py-2 px-4 fs-6"> Rent to Own  </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+            <!-- Financing -->
+            <div class="col-md-2">
+                <h6 class="footer-title">FINANCING</h6>
+                <ul class="list-unstyled">
+                <li><a href="#" class="footer-link">Get Pre-Qualified</a></li>
+                </ul>
+            </div>
+
+            <!-- Sell/Trade -->
+            <div class="col-md-2">
+                <h6 class="footer-title">SELL/TRADE</h6>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="footer-link">Get an Offer</a></li>
+                    <li><a href="#" class="footer-link">Carvana Value Tracker</a></li>
+                </ul>
+            </div>
+
+            <!-- How it Works -->
+            <div class="col-md-3">
+                <h6 class="footer-title">HOW IT WORKS</h6>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="footer-link">Buying From Carvana</a></li>
+                    <li><a href="#" class="footer-link">Selling or Trading In</a></li>
+                    <li><a href="#" class="footer-link">Finance With Carvana</a></li>
+                    <li><a href="#" class="footer-link">Auto Loan Calculator</a></li>
+                    <li><a href="#" class="footer-link">Our Protection Plans</a></li>
+                    <li><a href="#" class="footer-link">Repairs with Carvana</a></li>
+                    <li><a href="#" class="footer-link">Certified Cars</a></li>
+                    <li><a href="#" class="footer-link">Carvana Insurance</a></li>
+                    <li><a href="#" class="footer-link">Clean Vehicle Tax Credit</a></li>
+                    <li><a href="#" class="footer-link">Guide to Buying a Used EV</a></li>
+                </ul>
+            </div>
+
+            <!-- About Carvana -->
+            <div class="col-md-2">
+                <h6 class="footer-title">ABOUT CARVANA</h6>
+                <ul class="list-unstyled">
+                <li><a href="#" class="footer-link">About Us</a></li>
+                <li><a href="#" class="footer-link">Logistics Hubs</a></li>
+                <li><a href="#" class="footer-link">Customer Reviews</a></li>
+                <li><a href="#" class="footer-link">Careers</a></li>
+                </ul>
+            </div>
+
+            <!-- Support -->
+            <div class="col-md-3">
+                <h6 class="footer-title">SUPPORT</h6>
+                <p class="d-flex align-items-center"><i class="fa-solid fa-circle-info me-2"></i> <a href="#" class="footer-link">Support & Contact</a></p>
+                <h6 class="footer-title mt-3">OTHER</h6>
+                <p class="footer-email">partnerships@carvana.com</p>
+                <p class="footer-email">media@carvana.com</p>
+                <p class="footer-email">realestate@carvana.com</p>
+            </div>
+            </div>
+
+            <hr class="border-secondary">
+
+            <!-- Bottom Links -->
+            <div class="row">
+            <div class="col-md-12 d-flex flex-wrap justify-content-center text-center small">
+                <a href="#" class="footer-link mx-2">SEARCH CARS</a> |
+                <a href="#" class="footer-link mx-2">SITEMAP</a> |
+                <a href="#" class="footer-link mx-2">INVESTORS</a> |
+                <a href="#" class="footer-link mx-2">BLOG</a> |
+                <a href="#" class="footer-link mx-2">PATENTS</a> |
+                <a href="#" class="footer-link mx-2">PRESS</a>
+            </div>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="d-flex justify-content-center my-3">
+            <a href="#" class="mx-2"><i class="fa-brands fa-facebook fs-4"></i></a>
+            <a href="#" class="mx-2"><i class="fa-brands fa-linkedin fs-4"></i></a>
+            <a href="#" class="mx-2"><i class="fa-brands fa-square-instagram fs-4"></i></a>
+            <a href="#" class="mx-2"><i class="fa-brands fa-x-twitter fs-4"></i></a>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="text-center small text-secondary">
+            <p>Copyright © 2025 Carvana. All Rights Reserved.</p>
+            <p>
+                <a href="#" class="footer-link">User Agreement</a> |
+                <a href="#" class="footer-link">Financial and Other Privacy Notices</a> |
+                <a href="#" class="footer-link">Consumer Privacy Notice</a> |
+                <a href="#" class="footer-link">Do Not Sell or Share My Personal Information</a> |
+                <a href="#" class="footer-link">Code of Conduct</a> |
+                <a href="#" class="footer-link">Responsible Disclosure</a> |
+                <a href="#" class="footer-link">Accessibility</a>
+            </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Navbar Wishlist Offcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarWishlist" aria-labelledby="navbarWishlistLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="navbarWishlistLabel">Favorites</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav nav-pills d-flex justify-content-between bg-body-secondary rounded-pill p-2 mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item w-50" role="presentation">
+                    <button class="nav-link h-32 fs-14 d-flex justify-content-center align-items-center rounded-pill w-100 active" id="pills-vehicles-tab" data-bs-toggle="pill" data-bs-target="#pills-vehicles"
+                        type="button" role="tab" aria-controls="pills-vehicles" aria-selected="true">Vehicles</button>
+                </li>
+                <li class="nav-item w-50" role="presentation">
+                    <button class="nav-link h-32 fs-14 d-flex justify-content-center align-items-center rounded-pill w-100" id="pills-searches-tab" data-bs-toggle="pill" data-bs-target="#pills-searches"
+                        type="button" role="tab" aria-controls="pills-searches" aria-selected="false">Searches</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-vehicles" role="tabpanel" aria-labelledby="pills-vehicles-tab" tabindex="0">
+                    <img src="./assets/images/vehicles.gif" alt="Vehicle GIF" class="img-fluid rounded mb-3">
+                    <h4 class="mb-2 fs-6 fw-semibold"> You haven’t favorited any vehicles </h4>
+                    <p class="mb-2 fs-6"> Find a vehicle you love and favorite it using the heart icon. </p>
+                    <a href="#!" class="btn btn-primary w-50 mb-3 rounded-pill"> Search Vehicles </a>
+                    <p class="fs-14 mb-0"> Already have an account? <a href="#"> Sign in </a> to see your favorites. </p>
+                </div>
+                <div class="tab-pane fade" id="pills-searches" role="tabpanel" aria-labelledby="pills-searches-tab" tabindex="0">
+                    <img src="./assets/images/searches.gif" alt="Searches GIF" class="img-fluid rounded mb-3">
+                    <h4 class="mb-2 fs-6 fw-semibold"> You haven’t saved any searches </h4>
+                    <p class="mb-2 fs-6"> Save a search and we’ll send you updates when new vehicle matches become available. </p>
+                    <a href="#!" class="btn btn-primary w-50 mb-3 rounded-pill"> Search Vehicles </a>
+                    <p class="fs-14 mb-0"> Already have an account? <a href="#"> Sign in </a> to see your favorites. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar User Offcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas" aria-labelledby="navbarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="navbarOffcanvasLabel">Welcome to Dashwheelz</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p class="text-muted mb-2">Personalize your experience</p>
+            <a href="#!" class="btn btn-outline-primary w-100 mb-4">Sign in</a>
+    
+            <h4 class="mb-2 fs-6 fw-semibold">Finance with Dashwheelz</h4>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <p class="fs-14 mb-2">Get pre-qualified and shop with real terms. <strong>No hit to your credit.</strong></p>
+                    <button class="btn btn-light w-100 mt-2">Get Pre-qualified</button>
+                </div>
+            </div>
+    
+            <h4 class="mb-2 fs-6 fw-semibold">Sell/Trade Offer</h4>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <p class="fs-14 mb-2">Get a real offer in less than 2 minutes — sell, trade or track your value.</p>
+                    <button class="btn btn-light w-100 mt-2">Get Your Offer</button>
+                </div>
+            </div>
+
+            <hr>
+    
+            <div class="mb-2">
+                <a href="#" class="btn btn-light w-100 mt-2 text-start"> <i class="fa-solid fa-circle-info me-2"></i> Support and Contact </a>
+            </div>
+    
+            <div class="mb-2">
+                <a class="btn btn-light w-100 mt-2 text-start" data-bs-toggle="collapse" href="#howitWorks" role="button" aria-expanded="false" aria-controls="howitWorks"> <i class="fa-solid fa-building-columns me-2"></i>  How it Works <i class="fa-solid fa-angle-down ms-2"></i> </a>
+            </div>
+            <div class="collapse" id="howitWorks">
+                <div class="card card-body">
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Buying from Dashwheelz </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Selling or Trading-In </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Finance with Carvana </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Auto Loan Calculator </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Carvana Value Tracker </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Our Protection Plans </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Repairs with Carvana </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Certified Cars </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Carvana Insurance </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Clean Vehicle Tax Credit </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Guide to Buying a Used EV </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Your First EV </a>
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <a class="btn btn-light w-100 mt-2 text-start" data-bs-toggle="collapse" href="#about" role="button" aria-expanded="false" aria-controls="collapseExample"> <i class="fa-solid fa-book me-2"></i> About Dashwheelz <i class="fa-solid fa-angle-down ms-2"></i> </a>
+            </div>
+            <div class="collapse" id="about">
+                <div class="card card-body">
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> About Us </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Customer Reviews </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Customer Reviews </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Slick Carousel JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- Cusotm Script -->
+    <script src="./assets/app.js"></script>
+</body>
+</html>

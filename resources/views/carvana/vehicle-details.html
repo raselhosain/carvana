@@ -1,0 +1,1312 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Vehicle Details </title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/style.css">
+
+    <style>
+        /* Breadcrumb */
+        .breadcrumb-container {
+            padding: 5px 0;
+            margin: 20px 0;
+            background-color: #fff;
+        }
+
+        /* Sticky navigation */
+        .sticky-nav {
+            top: 0;
+            z-index: 1000;
+            position: sticky;
+            background: white;
+            padding: 15px 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sticky-nav .nav-btn {
+            background: transparent;
+            border: none;
+            color: #333;
+            padding: 8px 15px;
+            margin: 0 5px;
+            font-weight: 500;
+            transition: all 0.3s;
+            border-radius: 4px;
+        }
+
+        .sticky-nav .nav-btn:hover {
+            color: rgb(var(--theme));
+        }
+
+        .sticky-nav .nav-btn.active {
+            background: rgb(var(--theme));
+            color: white;
+        }
+
+        /* Section styling */
+        .content-section {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .content-section h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* Car specs styling */
+        /* .specs-list {
+        margin: 30px 0 15px 0;
+    } */
+
+        .specs-list li {
+            list-style: none;
+            text-align: center;
+            flex: 1;
+        }
+
+        .specs-list .spec-value {
+            font-size: 28px;
+            font-weight: 600;
+            display: block;
+        }
+
+        .specs-list .spec-label {
+            font-size: 14px;
+            color: #666;
+            position: relative;
+            top: -5px;
+        }
+
+        /* Finance tabs */
+        .finance-tabs {
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .finance-tabs .nav-link {
+            color: #333;
+            font-weight: 500;
+            border: none;
+            padding: 12px 20px;
+            position: relative;
+        }
+
+        .finance-tabs .nav-link.active {
+            background: transparent;
+            color: rgb(var(--theme));
+        }
+
+        .finance-tabs .nav-link.active:after {
+            content: '';
+            left: 0;
+            width: 100%;
+            height: 2px;
+            bottom: -1px;
+            position: absolute;
+            background: rgb(var(--theme));
+        }
+
+        /* Option cards */
+        .option-card {
+            padding: 15px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+            border: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .option-card:hover {
+            border-color: var(--theme-color);
+        }
+
+        .option-card.selected {
+            border-color: var(--theme-color);
+            background: rgba(62, 106, 225, 0.05);
+        }
+
+        .option-card .option-title {
+            font-weight: 600;
+        }
+
+        .option-card .option-price {
+            color: var(--theme-color);
+            font-weight: 600;
+        }
+
+        /* Price summary */
+        .price-summary {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .price-summary .total-price {
+            margin: 15px 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .deactive-price-summary .price-summary {
+            border-radius: 8px 8px 0 0;
+        }
+
+        /* Slick slider customization */
+        .slider-for img {
+            width: 100%;
+            height: auto;
+        }
+
+        .vechicle-details .vehicle-slider .slick-next {
+            right: 30px;
+        }
+
+        .vechicle-details .vehicle-slider .slick-prev {
+            left: 30px;
+        }
+
+        .vechicle-details .slick-dots {
+            position: absolute;
+            bottom: 25px;
+        }
+
+        /* Nav Tabs */
+        .finance-tabs .nav-link {
+            font-size: 16px;
+        }
+
+        .finance-tabs .nav-link.active {
+            border-bottom: 1px solid rgb(var(--theme)) !important;
+        }
+
+        .tab-content .tab-pane {
+            /* padding-bottom: 210px; */
+        }
+
+        .price-summary {
+            bottom: 0;
+            left: 24px;
+            right: 24px;
+            padding: 20px;
+            position: sticky;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+
+        .accordion-button svg {
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .detail-label {
+            font-size: 14px;
+            color: #b8b8b8;
+        }
+
+        .all-features .card {
+            color: #333 !important;
+            transform: translateY(0);
+            transition: 0.4s all ease-in-out;
+        }
+
+        .all-features .card:hover {
+            color: rgb(var(--theme)) !important;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .specs-list {
+                flex-direction: column;
+            }
+
+            .specs-list li {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+                <img src="./assets/images/logo.png" alt="Logo" class="img-fluid logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3 text-menu">
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill px-3" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill px-3" href="#!">How it Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill px-3" href="./about-us.html">About US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill px-3" href="#">Services</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ms-lg-3 icon-menu">
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill px-3 right-btns border d-flex align-items-center"
+                            data-bs-toggle="offcanvas" href="#navbarOffcanvas" role="button"
+                            aria-controls="navbarOffcanvas">
+                            <div class="user-icon rounded-circle me-2 d-flex justify-content-center align-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-user-round-icon lucide-user-round">
+                                    <circle cx="12" cy="8" r="5" />
+                                    <path d="M20 21a8 8 0 0 0-16 0" />
+                                </svg>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu">
+                                <path d="M4 12h16" />
+                                <path d="M4 18h16" />
+                                <path d="M4 6h16" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb ms-4 my-3">
+                <li class="breadcrumb-item"><a href="./index.html" class="theme-color"> Home </a></li>
+                <li class="breadcrumb-item active" aria-current="page"> Vehicle Details </li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="vechicle-details">
+        <div class="row">
+            <!-- Left Column - Vehicle Images -->
+            <div class="col-md-9">
+                <!-- Vehicle Slider -->
+                <div class="vehicle-slider">
+                    <!-- Slider For (Main Display) -->
+                    <div class="slider-for">
+                        <div><img src="./assets/images/vehicle-slider/big/1.jpg" /></div>
+                        <div><img src="./assets/images/vehicle-slider/big/2.jpg" /></div>
+                        <div><img src="./assets/images/vehicle-slider/big/3.jpg" /></div>
+                        <div><img src="./assets/images/vehicle-slider/big/4.jpg" /></div>
+                        <div><img src="./assets/images/vehicle-slider/big/5.jpg" /></div>
+                    </div>
+                </div>
+
+                <!-- Highlights -->
+                <div class="content-section py-0 mb-4">
+                    <h2>Highlights</h2>
+
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card p-4 h-100">
+                                <h5 class="card-title">Original Warranty Still Active</h5>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="feature-item"><span class="check-icon">✔</span> Basic warranty</li>
+                                    <li class="feature-item"><span class="check-icon">✔</span> Powertrain warranty</li>
+                                    <li class="feature-item"><span class="check-icon">✔</span> Battery warranty</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card p-4 h-100">
+                                <h5 class="card-title">Single Owner</h5>
+                                <p class="mb-1">History reports show only one prior owner</p>
+                                <a href="#" class="text-primary text-decoration-underline">DETAILS</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card p-4 h-100">
+                                <h5 class="card-title">Low Annual Mileage</h5>
+                                <p class="mb-0"><span class="check-icon">✔</span> Less than 9,000 miles per year on
+                                    average
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sticky Navigation -->
+                <div class="sticky-nav p-4">
+                    <a href="#key-features" class="btn btn-outline-primary active me-2">Key Features</a>
+                    <a href="#vehicle-details" class="btn btn-outline-primary me-2">Vehicle Details</a>
+                    <a href="#price-details" class="btn btn-outline-primary me-2">Price Details</a>
+                    <a href="#about-the-price" class="btn btn-outline-primary me-2">About the Price</a>
+                    <a href="#inspection" class="btn btn-outline-primary me-2">Inspection</a>
+                    <a href="#more-cars" class="btn btn-outline-primary me-2">More Cars</a>
+                </div>
+
+                <!-- Content Sections -->
+                <div id="key-features" class="content-section mt-4 p-4 bg-white">
+                    <h2>Key Features</h2>
+                    <p>The 2024 Toyota Corolla is a compact sedan that offers a perfect blend of efficiency,
+                        reliability, and modern technology. With its sleek design and advanced features, it's an
+                        excellent choice for daily commuting.</p>
+
+                    <div class="accordion" id="featuresAccordion">
+
+                        <!-- Comfort -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header m-0" id="headingComfort">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseComfort">
+                                    <svg fill="#001e3c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2a6 6 0 00-6 6c0 2.2 1.8 6 6 14 4.2-7.5 6-11.8 6-14a6 6 0 00-6-6zm0 8a2 2 0 110-4 2 2 0 010 4z" />
+                                    </svg>
+                                    Comfort and convenience
+                                </button>
+                            </h2>
+                            <div id="collapseComfort" class="accordion-collapse collapse"
+                                data-bs-parent="#featuresAccordion">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><span class="check-icon">✔</span> Heated Steering Wheel</li>
+                                        <li><span class="check-icon">✔</span> Power Tailgate/Hatch</li>
+                                        <li><span class="check-icon">✔</span> Remote Start</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Entertainment -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header m-0" id="headingEntertainment">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseEntertainment">
+                                    <svg fill="#001e3c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M12 3v18c-4-3-7-6-7-9s3-6 7-9zm2 0c4 3 7 6 7 9s-3 6-7 9V3z" />
+                                    </svg>
+                                    Entertainment and technology
+                                </button>
+                            </h2>
+                            <div id="collapseEntertainment" class="accordion-collapse collapse"
+                                data-bs-parent="#featuresAccordion">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><span class="check-icon">✔</span> Bluetooth Music</li>
+                                        <li><span class="check-icon">✔</span> GPS Navigation</li>
+                                        <li><span class="check-icon">✔</span> Hands Free Calling</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Safety -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header m-0" id="headingSafety">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseSafety">
+                                    <svg fill="#001e3c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M20 13H4v-2h16v2zm0 4H4v-2h16v2zM4 9h16V7H4v2z" />
+                                    </svg>
+                                    Safety and security
+                                </button>
+                            </h2>
+                            <div id="collapseSafety" class="accordion-collapse collapse"
+                                data-bs-parent="#featuresAccordion">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><span class="check-icon">✔</span> Active Lane Keep Assistance</li>
+                                        <li><span class="check-icon">✔</span> Adaptive Cruise Control</li>
+                                        <li><span class="check-icon">✔</span> Automatic Emergency Braking</li>
+                                        <li><span class="check-icon">✔</span> Collision Detection</li>
+                                        <li><span class="check-icon">✔</span> Lane Departure Warning</li>
+                                        <li><span class="check-icon">✔</span> Parking Assistance</li>
+                                        <li><span class="check-icon">✔</span> Rear View Camera</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Seating -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header m-0" id="headingSeating">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseSeating">
+                                    <svg fill="#001e3c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2C8.1 2 5 5.1 5 9c0 4.6 6 13 7 14 1-1.2 7-9.4 7-14 0-3.9-3.1-7-7-7z" />
+                                    </svg>
+                                    Seating and interior
+                                </button>
+                            </h2>
+                            <div id="collapseSeating" class="accordion-collapse collapse"
+                                data-bs-parent="#featuresAccordion">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><span class="check-icon">✔</span> Heated Seats</li>
+                                        <li><span class="check-icon">✔</span> Power Passenger Seat</li>
+                                        <li><span class="check-icon">✔</span> Seat Memory System</li>
+                                        <li><span class="check-icon">✔</span> Synthetic Leather Seats</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Wheels -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header m-0" id="headingWheels">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseWheels">
+                                    <svg fill="#001e3c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 3a7 7 0 110 14 7 7 0 010-14z" />
+                                    </svg>
+                                    Wheels and tires
+                                </button>
+                            </h2>
+                            <div id="collapseWheels" class="accordion-collapse collapse"
+                                data-bs-parent="#featuresAccordion">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><span class="check-icon">✔</span> Alloy Wheels</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="vehicle-details" class="content-section mt-4 p-4 bg-white">
+                    <h2>Vehicle Details</h2>
+
+                    <div class="row text-center g-4">
+                        <!-- Feature 1 -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="card p-3 h-100">
+                                <div class="detail-icon">
+                                    <img src="./assets/images/v-details/electric-battery-56px.svg" alt="Range">
+                                </div>
+                                <p class="detail-label">Range*</p>
+                                <p class="detail-value m-0">272 miles</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 2 -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="card p-3 h-100">
+                                <div class="detail-icon">
+                                    <img src="./assets/images/v-details/droplets-56px.svg" alt="Exterior Color">
+                                </div>
+                                <p class="detail-label">Exterior Color</p>
+                                <p class="detail-value m-0">White</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 3 -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="card p-3 h-100">
+                                <div class="detail-icon">
+                                    <img src="./assets/images/v-details/interior-swatch-56px.svg" alt="Interior">
+                                </div>
+                                <p class="detail-label">Interior</p>
+                                <p class="detail-value m-0">Black Synthetic Leather</p>
+                            </div>
+
+                        </div>
+
+                        <!-- Feature 4 -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="card p-3 h-100">
+                                <div class="detail-icon">
+                                    <img src="./assets/images/v-details/seats-56px.svg" alt="Seating">
+                                </div>
+                                <p class="detail-label">Seating</p>
+                                <p class="detail-value m-0">5 Seats</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 5 -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="card p-3 h-100">
+                                <div class="detail-icon">
+                                    <img src="./assets/images/v-details/drivetrain-56px.svg" alt="Drivetrain">
+                                </div>
+                                <p class="detail-label">Drivetrain</p>
+                                <p class="detail-value m-0">RWD</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 6 -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="card p-3 h-100">
+                                <div class="detail-icon">
+                                    <img src="./assets/images/v-details/engine-electric-56px.svg" alt="Engine">
+                                </div>
+                                <p class="detail-label">Engine</p>
+                                <p class="detail-value m-0">AC Electric Motor</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 7 -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="card p-3 h-100">
+                                <div class="detail-icon">
+                                    <img src="./assets/images/v-details/fuel-electric-56px.svg" alt="Fuel Type">
+                                </div>
+                                <p class="detail-label">Fuel Type</p>
+                                <p class="detail-value m-0">Electric</p>
+                            </div>
+                        </div>
+
+                        <!-- More Feature -->
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <a href="#!" class="text-decoration-none all-features" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                <div class="card h-100 d-flex justify-content-center">
+                                    VIEW ALL <br> FEATURES & SPECS
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="price-details" class="content-section mt-4 p-4 bg-white">
+                    <h2>Price Details</h2>
+                    <!-- <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>2024 Toyota Corolla LE</td>
+                                <td class="text-end">$22,050</td>
+                            </tr>
+                            <tr>
+                                <td>Classic Silver Metallic Paint</td>
+                                <td class="text-end">Included</td>
+                            </tr>
+                            <tr>
+                                <td>16-inch Steel Wheels</td>
+                                <td class="text-end">Included</td>
+                            </tr>
+                            <tr>
+                                <td>Fabric Interior</td>
+                                <td class="text-end">Included</td>
+                            </tr>
+                            <tr>
+                                <td>Destination Fee</td>
+                                <td class="text-end">$1,095</td>
+                            </tr>
+                            <tr class="table-active">
+                                <th>Total</th>
+                                <th class="text-end">$23,145</th>
+                            </tr>
+                        </tbody>
+                    </table> -->
+
+                    <div class="row g-4">
+                        <!-- Pay Once Card -->
+                        <div class="col-md-4">
+                            <div class="card text-center shadow-sm p-4 h-100">
+                                <h5 class="fw-bold mb-3">Pay Once</h5>
+                                <h2 class="text-primary fw-bold display-6">$0</h2>
+                                <hr />
+                                <div class="text-start mb-2">
+                                    <p>Vehicle price <span class="float-end">$0</span></p>
+                                    <p>Estimated tax, title, registration <span class="float-end">$0</span></p>
+                                </div>
+                                <div class="border-top pt-2 fw-bold d-flex justify-content-between">
+                                    <span>Total Purchase Price</span><span>$0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pay Monthly Card -->
+                        <div class="col-md-4">
+                            <div class="card text-center shadow-sm p-4 h-100">
+                                <h5 class="fw-bold mb-3">Pay Monthly</h5>
+                                <h2 class="text-primary fw-bold display-6">$0<small class="fs-6">/mo*</small></h2>
+                                <p class="text-muted small">
+                                    *Estimated payment based on a 0% APR for 0 months and $10/mo auto pay discount
+                                </p>
+                                <hr />
+                                <p class="small">No hit to your credit, see real monthly payments while shopping.</p>
+                                <p class="text-danger small">🔥 Roughly 80% of customers finance with us</p>
+                                <button class="btn btn-info text-white">GET YOUR TERMS</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About the Price Section -->
+                <div id="about-the-price" class="content-section mt-4 p-4 bg-white">
+                    <h3>About the Price</h3>
+                    <div class="comparison-card">
+                        <div class="deal-badge">Great Deal</div>
+                        <div class="mb-3">
+                            This vehicle is priced <strong class="text-blue-4">$4,701</strong> lower than
+                            the Kelley Blue Book® Typical Listing Price.
+                        </div>
+                        <div class="mb-3">
+                            <div class="price-row">
+                                <span>Kelley Blue Book®</span>
+                                <span>$31,691</span>
+                            </div>
+                            <div class="price-row highlight">
+                                <div class="d-flex align-items-center">
+                                    <span class="me-2">dashwheelz</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <g clip-path="url(#clip0)">
+                                            <path
+                                                d="M19.9848 9.99239C19.9848 15.5118 15.5118 19.9848 9.99103 19.9848C4.47026 19.9848 0 15.5122 0 9.99239C0 4.47253 4.473 0 9.98966 0C15.5063 0 19.9848 4.47481 19.9848 9.99239Z"
+                                                fill="#228BE6"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <span>$26,990</span>
+                            </div>
+                        </div>
+                        <div class="disclaimer">
+                            Savings amount based on the difference between Kelley Blue Book® Typical Listing
+                            Price and current Carvana listing price, not including tax, title, registration,
+                            or delivery costs. Savings amounts are updated daily.
+                        </div>
+                    </div>
+                </div>
+
+                <div id="inspection" class="content-section mt-4 p-4 bg-white">
+                    <h2>Inspection Report</h2>
+                    <p>This vehicle has passed our rigorous 150-point inspection process:</p>
+                    <ul>
+                        <li>Mechanical systems: Excellent</li>
+                        <li>Body and paint: Minor wear</li>
+                        <li>Interior: Excellent condition</li>
+                        <li>Tire tread: 85% remaining</li>
+                        <li>Brakes: 80% remaining</li>
+                        <li>No accident history reported</li>
+                        <li>Clean title</li>
+                    </ul>
+                </div>
+
+                <div id="more-cars" class="content-section mt-4 p-4 bg-white mb-4">
+                    <h2>More Vehicles You Might Like</h2>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <img src="./assets/images/slider/1.webp" class="card-img-top"
+                                    alt="Toyota Camry">
+                                <div class="card-body">
+                                    <h5 class="card-title">Toyota Camry</h5>
+                                    <p class="card-text">From $26,420</p>
+                                    <a href="#" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <img src="./assets/images/slider/2.webp" class="card-img-top"
+                                    alt="Honda Civic">
+                                <div class="card-body">
+                                    <h5 class="card-title">Honda Civic</h5>
+                                    <p class="card-text">From $23,950</p>
+                                    <a href="#" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <img src="./assets/images/slider/3.webp" class="card-img-top"
+                                    alt="Mazda 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mazda 3</h5>
+                                    <p class="card-text">From $22,550</p>
+                                    <a href="#" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Vehicle Specs and Options -->
+            <div class="col-md-3">
+                <div class="sticky-top mb-4" style="top: 20px;">
+                    <div class="position-relative bg-white p-4">
+                        <h3 class="mb-4 pb-2 text-center"> 2024 Toyota Corolla </h3>
+
+                        <!-- Basic Specs -->
+                        <ul class="specs-list p-0 mt-4 mb-2 d-flex justify-content-between">
+                            <li>
+                                <span class="spec-value">
+                                    327
+                                    <sub class="bottom-0 fs-14 fw-light left--5">mi</sub>
+                                </span>
+                                <span class="spec-label"> Range (EPA est.)</span>
+                            </li>
+                            <li>
+                                <span class="spec-value">
+                                    125
+                                    <sub class="bottom-0 fs-14 fw-light left--5">mph</sub>
+                                </span>
+                                <span class="spec-label"> Top Speed</span>
+                            </li>
+                            <li>
+                                <span class="spec-value">
+                                    4.6
+                                    <sub class="bottom-0 fs-14 fw-light left--5">sec</sub>
+                                </span>
+                                <span class="spec-label"> 0-60 mph</span>
+                            </li>
+                        </ul>
+
+                        <!-- Finance Tabs -->
+                        <ul class="nav finance-tabs" id="financeTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="cash-tab" data-bs-toggle="tab"
+                                    data-bs-target="#cash" type="button" role="tab">Cash</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="lease-tab" data-bs-toggle="tab" data-bs-target="#lease"
+                                    type="button" role="tab">Lease</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance"
+                                    type="button" role="tab">Finance</button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="financeTabsContent">
+                            <!-- Cash Tab -->
+                            <div class="tab-pane fade show active" id="cash" role="tabpanel">
+                                <!-- Options Selection -->
+                                <div class="mt-4">
+                                    <h5 class="mb-3">Configuration</h5>
+
+                                    <!-- Battery and Drive -->
+                                    <div class="mb-4">
+                                        <h6>Battery and Drive</h6>
+                                        <div class="option-card selected">
+                                            <div class="option-title">Long Range All-Wheel Drive</div>
+                                            <div class="option-price">$48,990</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Paint Color -->
+                                    <div class="mb-4">
+                                        <h6>Paint Color</h6>
+                                        <div class="option-card selected">
+                                            <div class="option-title">Stealth Grey</div>
+                                            <div class="option-price">Included</div>
+                                        </div>
+                                        <div class="option-card">
+                                            <div class="option-title">Pearl White Multi-Coat</div>
+                                            <div class="option-price">+$1,000</div>
+                                        </div>
+                                        <div class="option-card">
+                                            <div class="option-title">Ultra Red</div>
+                                            <div class="option-price">+$2,000</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Wheels -->
+                                    <div class="mb-4">
+                                        <h6>Wheels</h6>
+                                        <div class="option-card selected">
+                                            <div class="option-title">19" Crossflow Wheels</div>
+                                            <div class="option-price">Included</div>
+                                        </div>
+                                        <div class="option-card">
+                                            <div class="option-title">20" Helix 2.0 Wheels</div>
+                                            <div class="option-price">+$2,000</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Interior -->
+                                    <div class="mb-4">
+                                        <h6>Interior</h6>
+                                        <div class="option-card selected">
+                                            <div class="option-title">All Black Premium Interior</div>
+                                            <div class="option-price">Included</div>
+                                        </div>
+                                        <div class="option-card">
+                                            <div class="option-title">Black and White Interior</div>
+                                            <div class="option-price">+$1,000</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tow Package -->
+                                    <div class="mb-4">
+                                        <h6>Tow Package</h6>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="towPackage">
+                                            <label class="form-check-label" for="towPackage">
+                                                Tow Hitch (+$1,000)
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Price Summary -->
+                                <div class="price-summary">
+                                    <h5>Purchase Price</h5>
+                                    <div class="total-price">$50,630</div>
+                                    <p>Includes destination and order fees</p>
+                                    <button class="btn btn-primary w-100">Order Now</button>
+                                </div>
+                            </div>
+
+                            <!-- Lease Tab -->
+                            <div class="tab-pane fade" id="lease" role="tabpanel">
+                                <!-- Trim Level -->
+                                <div class="mb-4">
+                                    <h6>Trim Level</h6>
+                                    <div class="option-card selected">
+                                        <div class="option-title">LE</div>
+                                        <div class="option-price">$22,050</div>
+                                    </div>
+                                    <div class="option-card">
+                                        <div class="option-title">SE</div>
+                                        <div class="option-price">$23,610</div>
+                                    </div>
+                                    <div class="option-card">
+                                        <div class="option-title">XSE</div>
+                                        <div class="option-price">$25,420</div>
+                                    </div>
+                                </div>
+
+                                <!-- Exterior Color -->
+                                <div class="mb-4">
+                                    <h6>Exterior Color</h6>
+                                    <div class="option-card selected">
+                                        <div class="option-title">Classic Silver Metallic</div>
+                                        <div class="option-price">Included</div>
+                                    </div>
+                                    <div class="option-card">
+                                        <div class="option-title">Ruby Flare Pearl</div>
+                                        <div class="option-price">+$425</div>
+                                    </div>
+                                    <div class="option-card">
+                                        <div class="option-title">Blueprint</div>
+                                        <div class="option-price">+$425</div>
+                                    </div>
+                                </div>
+
+                                <!-- Interior -->
+                                <div class="mb-4">
+                                    <h6>Interior</h6>
+                                    <div class="option-card selected">
+                                        <div class="option-title">Fabric</div>
+                                        <div class="option-price">Included</div>
+                                    </div>
+                                    <div class="option-card">
+                                        <div class="option-title">SofTex®-trimmed</div>
+                                        <div class="option-price">+$1,000</div>
+                                    </div>
+                                </div>
+
+                                <!-- Packages -->
+                                <div class="mb-4">
+                                    <h6>Packages</h6>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="coldWeather">
+                                        <label class="form-check-label" for="coldWeather">
+                                            Cold Weather Package (+$1,015)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="premiumTech">
+                                        <label class="form-check-label" for="premiumTech">
+                                            Premium Technology Package (+$1,865)
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="price-summary">
+                                    <h5>Lease Estimate</h5>
+                                    <div class="total-price">$499/mo</div>
+                                    <p>36 months, 10,000 miles/year</p>
+                                    <p>$4,500 due at signing</p>
+                                    <button class="btn btn-primary w-100">Apply for Lease</button>
+                                </div>
+                            </div>
+
+                            <!-- Finance Tab -->
+                            <div class="tab-pane fade" id="finance" role="tabpanel">
+                                <div class="price-summary">
+                                    <h5>Finance Estimate</h5>
+                                    <div class="total-price">$789/mo</div>
+                                    <p>72 months, 3.99% APR</p>
+                                    <p>$5,000 down payment</p>
+                                    <button class="btn btn-primary w-100">Apply for Loan</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <!-- Financing -->
+                <div class="col-md-2">
+                    <h6 class="footer-title">FINANCING</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link">Get Pre-Qualified</a></li>
+                    </ul>
+                </div>
+
+                <!-- Sell/Trade -->
+                <div class="col-md-2">
+                    <h6 class="footer-title">SELL/TRADE</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link">Get an Offer</a></li>
+                        <li><a href="#" class="footer-link">Carvana Value Tracker</a></li>
+                    </ul>
+                </div>
+
+                <!-- How it Works -->
+                <div class="col-md-3">
+                    <h6 class="footer-title">HOW IT WORKS</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link">Buying From Carvana</a></li>
+                        <li><a href="#" class="footer-link">Selling or Trading In</a></li>
+                        <li><a href="#" class="footer-link">Finance With Carvana</a></li>
+                        <li><a href="#" class="footer-link">Auto Loan Calculator</a></li>
+                        <li><a href="#" class="footer-link">Our Protection Plans</a></li>
+                        <li><a href="#" class="footer-link">Repairs with Carvana</a></li>
+                        <li><a href="#" class="footer-link">Certified Cars</a></li>
+                        <li><a href="#" class="footer-link">Carvana Insurance</a></li>
+                        <li><a href="#" class="footer-link">Clean Vehicle Tax Credit</a></li>
+                        <li><a href="#" class="footer-link">Guide to Buying a Used EV</a></li>
+                    </ul>
+                </div>
+
+                <!-- About Carvana -->
+                <div class="col-md-2">
+                    <h6 class="footer-title">ABOUT CARVANA</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="#" class="footer-link">Logistics Hubs</a></li>
+                        <li><a href="#" class="footer-link">Customer Reviews</a></li>
+                        <li><a href="#" class="footer-link">Careers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="col-md-3">
+                    <h6 class="footer-title">SUPPORT</h6>
+                    <p class="d-flex align-items-center"><i class="fa-solid fa-circle-info me-2"></i> <a href="#"
+                            class="footer-link">Support & Contact</a></p>
+                    <h6 class="footer-title mt-3">OTHER</h6>
+                    <p class="footer-email">partnerships@carvana.com</p>
+                    <p class="footer-email">media@carvana.com</p>
+                    <p class="footer-email">realestate@carvana.com</p>
+                </div>
+            </div>
+
+            <hr class="border-secondary">
+
+            <!-- Bottom Links -->
+            <div class="row">
+                <div class="col-md-12 d-flex flex-wrap justify-content-center text-center small">
+                    <a href="#" class="footer-link mx-2">SEARCH CARS</a> |
+                    <a href="#" class="footer-link mx-2">SITEMAP</a> |
+                    <a href="#" class="footer-link mx-2">INVESTORS</a> |
+                    <a href="#" class="footer-link mx-2">BLOG</a> |
+                    <a href="#" class="footer-link mx-2">PATENTS</a> |
+                    <a href="#" class="footer-link mx-2">PRESS</a>
+                </div>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="d-flex justify-content-center my-3">
+                <a href="#" class="mx-2"><i class="fa-brands fa-facebook fs-4"></i></a>
+                <a href="#" class="mx-2"><i class="fa-brands fa-linkedin fs-4"></i></a>
+                <a href="#" class="mx-2"><i class="fa-brands fa-square-instagram fs-4"></i></a>
+                <a href="#" class="mx-2"><i class="fa-brands fa-x-twitter fs-4"></i></a>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="text-center small text-secondary">
+                <p>Copyright © 2025 Carvana. All Rights Reserved.</p>
+                <p>
+                    <a href="#" class="footer-link">User Agreement</a> |
+                    <a href="#" class="footer-link">Financial and Other Privacy Notices</a> |
+                    <a href="#" class="footer-link">Consumer Privacy Notice</a> |
+                    <a href="#" class="footer-link">Do Not Sell or Share My Personal Information</a> |
+                    <a href="#" class="footer-link">Code of Conduct</a> |
+                    <a href="#" class="footer-link">Responsible Disclosure</a> |
+                    <a href="#" class="footer-link">Accessibility</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- All Features -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">All Features & Specs</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar Wishlist Offcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarWishlist" aria-labelledby="navbarWishlistLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="navbarWishlistLabel">Favorites</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav nav-pills d-flex justify-content-between bg-body-secondary rounded-pill p-2 mb-3"
+                id="pills-tab" role="tablist">
+                <li class="nav-item w-50" role="presentation">
+                    <button
+                        class="nav-link h-32 fs-14 d-flex justify-content-center align-items-center rounded-pill w-100 active"
+                        id="pills-vehicles-tab" data-bs-toggle="pill" data-bs-target="#pills-vehicles" type="button"
+                        role="tab" aria-controls="pills-vehicles" aria-selected="true">Vehicles</button>
+                </li>
+                <li class="nav-item w-50" role="presentation">
+                    <button
+                        class="nav-link h-32 fs-14 d-flex justify-content-center align-items-center rounded-pill w-100"
+                        id="pills-searches-tab" data-bs-toggle="pill" data-bs-target="#pills-searches" type="button"
+                        role="tab" aria-controls="pills-searches" aria-selected="false">Searches</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-vehicles" role="tabpanel"
+                    aria-labelledby="pills-vehicles-tab" tabindex="0">
+                    <img src="./assets/images/vehicles.gif" alt="Vehicle GIF" class="img-fluid rounded mb-3">
+                    <h4 class="mb-2 fs-6 fw-semibold"> You haven’t favorited any vehicles </h4>
+                    <p class="mb-2 fs-6"> Find a vehicle you love and favorite it using the heart icon. </p>
+                    <a href="#!" class="btn btn-primary w-50 mb-3 rounded-pill"> Search Vehicles </a>
+                    <p class="fs-14 mb-0"> Already have an account? <a href="#"> Sign in </a> to see your favorites.
+                    </p>
+                </div>
+                <div class="tab-pane fade" id="pills-searches" role="tabpanel" aria-labelledby="pills-searches-tab"
+                    tabindex="0">
+                    <img src="./assets/images/searches.gif" alt="Searches GIF" class="img-fluid rounded mb-3">
+                    <h4 class="mb-2 fs-6 fw-semibold"> You haven’t saved any searches </h4>
+                    <p class="mb-2 fs-6"> Save a search and we’ll send you updates when new vehicle matches become
+                        available. </p>
+                    <a href="#!" class="btn btn-primary w-50 mb-3 rounded-pill"> Search Vehicles </a>
+                    <p class="fs-14 mb-0"> Already have an account? <a href="#"> Sign in </a> to see your favorites.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar User Offcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas" aria-labelledby="navbarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="navbarOffcanvasLabel">Welcome to Dashwheelz</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p class="text-muted mb-2">Personalize your experience</p>
+            <a href="#!" class="btn btn-outline-primary w-100 mb-4">Sign in</a>
+
+            <h4 class="mb-2 fs-6 fw-semibold">Finance with Dashwheelz</h4>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <p class="fs-14 mb-2">Get pre-qualified and shop with real terms. <strong>No hit to your
+                            credit.</strong></p>
+                    <button class="btn btn-light w-100 mt-2">Get Pre-qualified</button>
+                </div>
+            </div>
+
+            <h4 class="mb-2 fs-6 fw-semibold">Sell/Trade Offer</h4>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <p class="fs-14 mb-2">Get a real offer in less than 2 minutes — sell, trade or track your value.</p>
+                    <button class="btn btn-light w-100 mt-2">Get Your Offer</button>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="mb-2">
+                <a href="#" class="btn btn-light w-100 mt-2 text-start"> <i class="fa-solid fa-circle-info me-2"></i>
+                    Support and Contact </a>
+            </div>
+
+            <div class="mb-2">
+                <a class="btn btn-light w-100 mt-2 text-start" data-bs-toggle="collapse" href="#howitWorks"
+                    role="button" aria-expanded="false" aria-controls="howitWorks"> <i
+                        class="fa-solid fa-building-columns me-2"></i> How it Works <i
+                        class="fa-solid fa-angle-down ms-2"></i> </a>
+            </div>
+            <div class="collapse" id="howitWorks">
+                <div class="card card-body">
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Buying
+                        from Dashwheelz </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Selling
+                        or Trading-In </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Finance
+                        with Carvana </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Auto
+                        Loan Calculator </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Carvana
+                        Value Tracker </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Our
+                        Protection Plans </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Repairs
+                        with Carvana </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none">
+                        Certified Cars </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Carvana
+                        Insurance </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Clean
+                        Vehicle Tax Credit </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Guide
+                        to Buying a Used EV </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> Your
+                        First EV </a>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <a class="btn btn-light w-100 mt-2 text-start" data-bs-toggle="collapse" href="#about" role="button"
+                    aria-expanded="false" aria-controls="collapseExample"> <i class="fa-solid fa-book me-2"></i> About
+                    Dashwheelz <i class="fa-solid fa-angle-down ms-2"></i> </a>
+            </div>
+            <div class="collapse" id="about">
+                <div class="card card-body">
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none"> About
+                        Us </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none">
+                        Customer Reviews </a>
+                    <a href="#" class="btn btn-light w-100 mt-2 text-start d-inline-block text-decoration-none">
+                        Customer Reviews </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Slick Carousel JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- Cusotm Script -->
+    <script src="./assets/app.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Main Slider (draggable, dots, no arrows)
+            $('.slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                dots: true,
+                draggable: true
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            // Get the price summary element and its offset
+            const $priceSummary = $('.price-summary');
+            const priceSummaryOffset = $priceSummary.offset().top;
+            const priceSummaryHeight = $priceSummary.outerHeight();
+            const stickyEndPoint = priceSummaryOffset + priceSummaryHeight;
+
+            // Function to check visibility
+            function checkPriceSummaryVisibility() {
+                const scrollPosition = $(window).scrollTop();
+                const windowHeight = $(window).height();
+
+                // Check if the price summary is in the viewport and sticky
+                if (scrollPosition + windowHeight > priceSummaryOffset &&
+                    scrollPosition < stickyEndPoint) {
+                    $('body').addClass('deactive-price-summary');
+                } else {
+                    $('body').removeClass('deactive-price-summary');
+                }
+            }
+
+            // Run on load and scroll
+            checkPriceSummaryVisibility();
+            $(window).scroll(checkPriceSummaryVisibility);
+
+            // Also handle window resize (in case layout changes)
+            $(window).resize(function () {
+                // Recalculate positions since they might have changed
+                const newOffset = $priceSummary.offset().top;
+                priceSummaryOffset = newOffset;
+                stickyEndPoint = newOffset + $priceSummary.outerHeight();
+                checkPriceSummaryVisibility();
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            // Sticky navigation click handler
+            $('.sticky-nav a').click(function (e) {
+                e.preventDefault();
+
+                $('.sticky-nav a').removeClass('active');
+                $(this).addClass('active');
+
+                var target = $(this).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top - 80
+                }, 500);
+            });
+
+            // Update active nav link on scroll
+            $(window).scroll(function () {
+                var scrollPosition = $(window).scrollTop();
+
+                $('.content-section').each(function () {
+                    var sectionTop = $(this).offset().top - 100;
+                    var sectionBottom = sectionTop + $(this).outerHeight();
+                    var sectionId = $(this).attr('id');
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        $('.sticky-nav a').removeClass('active');
+                        $('.sticky-nav a[href="#' + sectionId + '"]').addClass('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
